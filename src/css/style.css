@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: clip;
+}
+
+header {
+  width: 100vw;
+  padding: 1.5rem;
+  background-color: #000;
+  font-family: "Oswald", sans-serif;
+  display: flex;
+  justify-content: space-between;
+}
+
+header ul {
+    list-style-type: none;
+}
+
+header a {
+  text-decoration: none;
+  color: #fff;
+  transition: 0.3s;
+}
+
+header a:hover {
+  color: red;
+}
+
+html body div#___gatsby div#gatsby-focus-wrapper main {
+  text-align: center;
+  margin-top: 5rem;
+}
+
+#portfolio-link {
+  padding: 1.3em 3em;
+  text-decoration: none;
+  color: #000;
+  font-family: "Oswald", sans-serif;
+  background-color: #fff;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+#portfolio-link:hover {
+  background-color: #2371c4;
+  box-shadow: 0px 15px 20px rgba(46, 83, 229, 0.4);
+  color: #fff;
+}
+
+main ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1.4rem;
+  justify-content: space-evenly;
+  list-style-type: none;
+}
+
+main ul li {
+  margin: 1rem;
+}
+
+footer {
+  margin-top: 8rem;
+  width: 100%;
+  padding: 1.5rem;
+  font-family: "Oswald", sans-serif;
+  color: #fff;
+  background-color: #000;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+@media (max-width: 768px) {
+  footer {
+    display: block;
+  }
+}
