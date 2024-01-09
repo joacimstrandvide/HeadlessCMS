@@ -1,9 +1,7 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import { GatsbyImage } from "gatsby-plugin-image"
-import { INLINES, BLOCKS, MARKS } from "@contentful/rich-text-types"
-import { renderRichText } from "gatsby-source-contentful/rich-text"
 
 export const query = graphql`
   query {
@@ -12,9 +10,7 @@ export const query = graphql`
         node {
           id
           title
-          description {
-            description
-          }
+          createdAt(formatString: "MMMM DD, YYYY")
           image {
             gatsbyImage(width: 300)
           }
@@ -24,19 +20,21 @@ export const query = graphql`
   }
 `
 
-const BlogPost = props => {
+const BlogPost = ({ data }) => {
+  const contentfulPortfolio = data.allContentfulPortfolio.edges[0].node
+
   return (
     <Layout>
       <div className="content">
-        <h1>{props.data.contentfulPortfolio.title}</h1>
+        <h1>{contentfulPortfolio.title}</h1>
         <span className="meta">
-          Posted on {props.data.contentfulPortfolio.createdAt}
+          Posted on {contentfulPortfolio.createdAt}
         </span>
 
         <GatsbyImage
           className="featured"
-          alt={props.data.contentfulPortfolio.title}
-          image={props.datacontentfulPortfolio.image.gatsbyImage}
+          alt={contentfulPortfolio.title}
+          image={contentfulPortfolio.image.gatsbyImage}
         />
       </div>
     </Layout>

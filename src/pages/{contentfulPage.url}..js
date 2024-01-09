@@ -6,6 +6,7 @@ import { renderRichText } from "gatsby-source-contentful/rich-text"
 import AboutTemplate from "../templates/about-template"
 import HomeTemplate from "../templates/home-template"
 import PortfolioTemplate from "../templates/portfolio-template"
+import ContactTemplate from "../templates/contact-template"
 
 const Page = props => {
   const { data } = props
@@ -16,6 +17,8 @@ const Page = props => {
         return <AboutTemplate {...contentfulPage} />
       case "portfolio":
         return <PortfolioTemplate {...contentfulPage} />
+      case "contact":
+        return <ContactTemplate {...contentfulPage} />
       default:
         return <HomeTemplate {...contentfulPage} />
     }
@@ -31,8 +34,11 @@ export const query = graphql`
       content {
         raw
       }
+      image {
+        gatsbyImage(width: 300)
+      }
     }
   }
 `
 
-export default Page;
+export default Page

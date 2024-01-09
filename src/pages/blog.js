@@ -34,7 +34,7 @@ const Blog = () => {
           return (
             <li className="post" key={edge.node.id}>
               <h2>
-                <Link to={`/blog/${edge.node.slug}/`}>
+                <Link to={`/portfolio/${edge.node.slug}/`}>
                   {edge.node.title}
                 </Link>
               </h2>
@@ -52,7 +52,7 @@ const Blog = () => {
                 {edge.node.excerpt.childMarkdownRemark.excerpt}
               </p> */}
               <div className="button">
-                <Link to={`/blog/${edge.node.slug}/`}>Läs Mer</Link>
+                <Link to={`/portfolio/${edge.node.slug}/`}>Läs Mer</Link>
               </div>
             </li>
           );

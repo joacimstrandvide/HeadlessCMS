@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 
-//sidans namn blir portfolio efter namnet på javascript-filen
+
 const SecondPage = () => {
   const data = useStaticQuery(graphql`
     query {

@@ -1,11 +1,15 @@
-import * as React from "react"
+import React from "react"
+import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 
-//i dev mode overridas denna sida av en inbyggd 404-sida
 const NotFoundPage = () => (
   <Layout>
     <h1>404: Not Found</h1>
+    <h3>Sidan du letar efter finns inte eller har flyttats.</h3>
+    <p>
+      <Link to="/">Till Hem</Link>
+    </p>
   </Layout>
 )
 
