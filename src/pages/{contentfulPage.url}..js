@@ -1,8 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import { INLINES, BLOCKS, MARKS } from "@contentful/rich-text-types"
-import { renderRichText } from "gatsby-source-contentful/rich-text"
 import AboutTemplate from "../templates/about-template"
 import HomeTemplate from "../templates/home-template"
 import PortfolioTemplate from "../templates/portfolio-template"
@@ -31,11 +29,12 @@ export const query = graphql`
     contentfulPage(id: { eq: $id }) {
       url
       title
+      template
       content {
         raw
       }
       image {
-        gatsbyImage(width: 300)
+        gatsbyImage(width: 500)
       }
     }
   }

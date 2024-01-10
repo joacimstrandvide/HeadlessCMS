@@ -1,52 +1,57 @@
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery, Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
-import Layout from "../components/layout"
-
 
 const PortfolioTemplate = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      allContentfulPortfolio {
-        edges {
-          node {
-            id
-            title
-            description {
-              description
-            }
-            image {
-              gatsbyImage(width: 300)
+  const data = useStaticQuery(
+    graphql`
+      query {
+        allContentfulPortfolio(sort: { updatedAt: ASC }) {
+          edges {
+            node {
+              id
+              title
+              slug
+              image {
+                gatsbyImage(width: 300)
+              }
             }
           }
         }
       }
-    }
-  `)
-
+    `
+  )
   return (
-    <Layout>
-      <ul className="items">
+    <>
+      <p>
+        <Link to="/">Till Hem</Link>
+      </p>
+      <ul className="posts">
         {data.allContentfulPortfolio.edges.map(edge => {
-          const hasImage = edge.node.image && edge.node.image.gatsbyImage
-
           return (
-            <li className="item" key={edge.node.id}>
-              <h3>{edge.node.title}</h3>
-              {hasImage && (
-                <GatsbyImage
-                  alt={edge.node.title}
-                  image={edge.node.image.gatsbyImage}
-                />
-              )}
+            <li className="post" key={edge.node.id}>
+              <h2>
+                <Link to={`/portfolio/${edge.node.slug}/`}>
+                  {edge.node.title}
+                </Link>
+              </h2>
+              {/* <GatsbyImage
+                className="featured"
+                alt={edge.node.title}
+                image={edge.node.image.gatsbyImage}
+              /> */}
+              <div className="meta">
+                <span>Posted on {edge.node.createdAt}</span>
+              </div>
+              <div className="button">
+                <Link to={`/portfolio/${edge.node.slug}/`}>Läs Mer</Link>
+              </div>
             </li>
           )
         })}
       </ul>
-    </Layout>
+    </>
   )
 }
-
-export const Head = () => <title>Portfolio Page</title>
 
 export default PortfolioTemplate

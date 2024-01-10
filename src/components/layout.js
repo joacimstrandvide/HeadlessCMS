@@ -1,8 +1,9 @@
-import * as React from "react"
+import React from "react"
 import useNavigation from "../hooks/use-navigation"
 import "bootstrap/dist/css/bootstrap.min.css"
 import "../css/style.css"
 import { Link } from "gatsby"
+import Footer from "./footer"
 
 const Layout = ({ children }) => {
   const navigation = useNavigation();
@@ -10,6 +11,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <header>
+        {/* Navigations meny */}
         <nav>
           <ul>
             {navigation.map(({ node }) => (
@@ -21,7 +23,7 @@ const Layout = ({ children }) => {
         </nav>
       </header>
       <main>{children}</main>
-      <footer>Footer</footer>
+      <Footer />
     </>
   );
 }

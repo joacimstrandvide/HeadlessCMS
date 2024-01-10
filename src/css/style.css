@@ -16,7 +16,7 @@ header {
 }
 
 header ul {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 header a {
@@ -66,8 +66,9 @@ main ul li {
   margin: 1rem;
 }
 
-footer {
+.socials {
   margin-top: 8rem;
+  margin-bottom: 0;
   width: 100%;
   padding: 1.5rem;
   font-family: "Oswald", sans-serif;
@@ -77,8 +78,18 @@ footer {
   justify-content: space-evenly;
 }
 
+.socials-item {
+  text-decoration: none;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.socials-item:hover {
+  color: red;
+}
+
 @media (max-width: 768px) {
-  footer {
+  .socials {
     display: block;
   }
 }

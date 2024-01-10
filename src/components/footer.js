@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 
-const ContactTemplate = contentfulPage => {
+const Footer = () => {
   const data = useStaticQuery(graphql`
     query {
       allContentfulSocials {
@@ -14,11 +14,12 @@ const ContactTemplate = contentfulPage => {
       }
     }
   `)
+
   return (
-    <div className="contact">
+    <div className="socials">
       {data.allContentfulSocials.edges.map(edge => {
         return (
-          <a className="contact-item" href={edge.node.link}>
+          <a className="socials-item" href={edge.node.link}>
             {edge.node.title}
           </a>
         )
@@ -27,4 +28,4 @@ const ContactTemplate = contentfulPage => {
   )
 }
 
-export default ContactTemplate
+export default Footer

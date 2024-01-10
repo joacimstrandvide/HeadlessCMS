@@ -1,6 +1,6 @@
 import React from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
-import { INLINES, BLOCKS, MARKS } from "@contentful/rich-text-types"
+import { MARKS } from "@contentful/rich-text-types"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 
 const AboutTemplate = contentfulPage => {
@@ -13,7 +13,7 @@ const AboutTemplate = contentfulPage => {
     <main>
       <h2>{contentfulPage.title}</h2>
       <p>{renderRichText(contentfulPage.content, richTextConfig)}</p>
-      <GatsbyImage alt="home image" image={contentfulPage.image.gatsbyImage} />
+      <GatsbyImage alt="image" image={contentfulPage.image.gatsbyImage} />
     </main>
   )
 }

@@ -14,10 +14,9 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby ITHS`,
-    description: `Enkel starter template för ITHS-studenter`,
-    author: `Håkan Gleissman`,
-    siteUrl: `http://dummy-site.com`,
+    title: `Joacim Headless CMS`,
+    description: `Mitt Headless CMS projekt`,
+    author: `Joacim Strandvide`
   },
   plugins: [
     `gatsby-plugin-image`,
