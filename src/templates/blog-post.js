@@ -21,7 +21,7 @@ export const query = graphql`
 `
 
 const BlogPost = ({ data }) => {
-  const contentfulPortfolio = data.allContentfulPortfolio.edges[0].node
+  const contentfulPortfolio = data.allContentfulPortfolio.edges[1].node
 
   return (
     <Layout>

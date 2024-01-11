@@ -6,6 +6,7 @@ body {
   overflow-x: clip;
 }
 
+/* Headern med menyn */
 header {
   width: 100vw;
   padding: 1.5rem;
@@ -34,9 +35,45 @@ html body div#___gatsby div#gatsby-focus-wrapper main {
   margin-top: 5rem;
 }
 
-#portfolio-link {
-  padding: 1.3em 3em;
-  text-decoration: none;
+/* Kontakt Sidan */
+.contact {
+    background-color: #000;
+    color: #fff;
+    width: 25vw;
+    border-radius: 20px;
+    margin: auto;
+    padding: 1.5rem;
+}
+
+.contact-item {
+    text-decoration: none;
+    color: #fff;
+    margin: .5rem;
+    transition: .3s;
+}
+
+.contact-item:hover {
+    color: red;
+}
+
+/* Portföljen */
+
+/* Till Hem högst upp */
+#home-button a {
+    background-color: #000;
+    border-radius: 20px;
+    padding: .6rem;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* UL:en som allt ligger i */
+.portfolio-items {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2.5rem;
+  justify-content: space-evenly;
+  list-style-type: none;
   color: #000;
   font-family: "Oswald", sans-serif;
   background-color: #fff;
@@ -44,28 +81,58 @@ html body div#___gatsby div#gatsby-focus-wrapper main {
   border-radius: 20px;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease 0s;
-  cursor: pointer;
   outline: none;
 }
 
-#portfolio-link:hover {
-  background-color: #2371c4;
+/* Individuella objekt */
+.portfolio-item {
+    margin: 2rem;
+    padding: 1.4rem;
+    transition: .4s;
+    border-radius: 20px;
+}
+/* Individuella objekt Hover */
+.portfolio-item:hover {
   box-shadow: 0px 15px 20px rgba(46, 83, 229, 0.4);
-  color: #fff;
 }
 
-main ul {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 1.4rem;
-  justify-content: space-evenly;
-  list-style-type: none;
+/* Individuella objekt Titel */
+.portfolio-item h2 a {
+    color: #000;
+    text-decoration: none;
+    transition: .3s;
 }
 
-main ul li {
-  margin: 1rem;
+.portfolio-item h2 a:hover {
+    color: red;
 }
 
+/* Individuella objekt beskrivning */
+.portfolio-meta span {
+    margin: .4rem;
+}
+
+/* Individuella objekt Läs Mer knappen */
+.portfolio-button {
+    margin-top: 1rem;
+}
+
+.portfolio-button a {
+    color: #fff;
+    text-decoration: none;
+    transition: .3s;
+    background-color: #000;
+    padding: .6rem;
+    border-radius: 10px;
+}
+
+.portfolio-button a:hover {
+    color: red;
+}
+
+
+
+/* Socials i footern */
 .socials {
   margin-top: 8rem;
   margin-bottom: 0;

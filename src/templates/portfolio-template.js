@@ -12,6 +12,10 @@ const PortfolioTemplate = () => {
               id
               title
               slug
+              description {
+                description
+              }
+              createdAt(formatString: "MMMM DD, YYYY")
               image {
                 gatsbyImage(width: 300)
               }
@@ -23,27 +27,30 @@ const PortfolioTemplate = () => {
   )
   return (
     <>
-      <p>
+      <p id="home-button">
         <Link to="/">Till Hem</Link>
       </p>
-      <ul className="posts">
+      <ul className="portfolio-items">
         {data.allContentfulPortfolio.edges.map(edge => {
+          const hasImage = edge.node.image && edge.node.image.gatsbyImage
           return (
-            <li className="post" key={edge.node.id}>
+            <li className="portfolio-item" key={edge.node.id}>
               <h2>
                 <Link to={`/portfolio/${edge.node.slug}/`}>
                   {edge.node.title}
                 </Link>
               </h2>
-              {/* <GatsbyImage
-                className="featured"
-                alt={edge.node.title}
-                image={edge.node.image.gatsbyImage}
-              /> */}
-              <div className="meta">
-                <span>Posted on {edge.node.createdAt}</span>
+              {hasImage && (
+                <GatsbyImage
+                  alt={edge.node.title}
+                  image={edge.node.image.gatsbyImage}
+                />
+              )}
+              <div className="portfolio-meta">
+                <span>Posted on {edge.node.createdAt}</span><br />
+                <span>{edge.node.description.description}</span>
               </div>
-              <div className="button">
+              <div className="portfolio-button">
                 <Link to={`/portfolio/${edge.node.slug}/`}>Läs Mer</Link>
               </div>
             </li>
