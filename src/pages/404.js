@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery, Link } from "gatsby"
 
 const NotFoundPage = () => {
   const data = useStaticQuery(graphql`
@@ -23,6 +23,7 @@ const NotFoundPage = () => {
           <>
             <h1>{edge.node.title}</h1>
             <p>{edge.node.value}</p>
+            <Link to="/">Till Hem</Link>
           </>
         )
       })}

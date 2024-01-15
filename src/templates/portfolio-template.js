@@ -27,9 +27,6 @@ const PortfolioTemplate = () => {
   )
   return (
     <>
-      <p id="home-button">
-        <Link to="/">Till Hem</Link>
-      </p>
       <ul className="portfolio-items">
         {data.allContentfulPortfolio.edges.map(edge => {
           const hasImage = edge.node.image && edge.node.image.gatsbyImage

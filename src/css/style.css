@@ -58,15 +58,6 @@ html body div#___gatsby div#gatsby-focus-wrapper main {
 
 /* Portföljen */
 
-/* Till Hem högst upp */
-#home-button a {
-    background-color: #000;
-    border-radius: 20px;
-    padding: .6rem;
-    color: #fff;
-    text-decoration: none;
-}
-
 /* UL:en som allt ligger i */
 .portfolio-items {
   display: flex;
