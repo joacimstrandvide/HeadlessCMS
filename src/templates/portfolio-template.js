@@ -38,7 +38,7 @@ const PortfolioTemplate = () => {
                 </Link>
               </h2>
               {hasImage && (
-                <GatsbyImage
+                <GatsbyImage className="portfolio-img"
                   alt={edge.node.title}
                   image={edge.node.image.gatsbyImage}
                 />

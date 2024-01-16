@@ -21,7 +21,8 @@ export const query = graphql`
 
 const BlogPost = ({ data }) => {
   const contentfulPortfolio = data.contentfulPortfolio
-  const hasImage = contentfulPortfolio.image && contentfulPortfolio.image.gatsbyImage
+  const hasImage =
+    contentfulPortfolio.image && contentfulPortfolio.image.gatsbyImage
 
   return (
     <Layout>
@@ -34,7 +35,8 @@ const BlogPost = ({ data }) => {
         </span>
         <br />
         {hasImage && (
-          <GatsbyImage className="featured"
+          <GatsbyImage
+            className="featured"
             alt={contentfulPortfolio.title}
             image={contentfulPortfolio.image.gatsbyImage}
           />
