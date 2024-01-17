@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap");
 
+/* Variabel färger */
 :root {
   --text: #060e0e;
   --background: #f6fbfb;
@@ -19,7 +20,7 @@ body {
 header {
   width: 100vw;
   padding: 1.5rem;
-  background-color: #000;
+  background-color: #4d5d53;
   font-family: "Oswald", sans-serif;
   display: flex;
   justify-content: space-between;
@@ -32,14 +33,15 @@ header ul {
 header a {
   text-decoration: none;
   color: #fff;
-  transition: 0.3s;
-  border-bottom: 4px solid var(--primary);
+  padding: 0.2rem;
+  transition: 0.4s ease-in-out;
 }
 
 header a:hover {
-  color: var(--primary);
+  border-left: 5px solid var(--text);
 }
 
+/* För mobil anpassning */
 @media (max-width: 760px) {
   .header {
     display: block;
@@ -58,13 +60,14 @@ html body div#___gatsby div#gatsby-focus-wrapper main {
   width: 40vw;
   border-radius: 20px;
   margin: auto;
-  padding: 1.5rem;
+  padding: 2rem;
 }
 
+/* Individuella länkar */
 .contact-item {
   text-decoration: none;
   color: #fff;
-  margin: 0.5rem;
+  margin: 1rem;
   transition: 0.3s;
   border-bottom: 4px solid var(--secondary);
 }
@@ -73,6 +76,7 @@ html body div#___gatsby div#gatsby-focus-wrapper main {
   color: var(--secondary);
 }
 
+/* För mobil anpassning */
 @media (max-width: 760px) {
   .contact {
     width: 95vw;
@@ -93,7 +97,6 @@ html body div#___gatsby div#gatsby-focus-wrapper main {
   font-family: "Oswald", sans-serif;
   background-color: #fff;
   border: none;
-  border-radius: 20px;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease 0s;
   outline: none;
@@ -108,7 +111,7 @@ html body div#___gatsby div#gatsby-focus-wrapper main {
 }
 /* Individuella objekt Hover */
 .portfolio-item:hover {
-  box-shadow: 0px 15px 20px rgba(46, 83, 229, 0.4);
+  box-shadow: 0px 15px 20px var(--accent);
 }
 
 /* Individuella objekt Titel */
@@ -116,10 +119,6 @@ html body div#___gatsby div#gatsby-focus-wrapper main {
   color: #000;
   text-decoration: none;
   transition: 0.3s;
-}
-
-.portfolio-item h2 a:hover {
-  color: var(--primary);
 }
 
 /* Individuella objekt beskrivning */
@@ -135,23 +134,44 @@ html body div#___gatsby div#gatsby-focus-wrapper main {
 .portfolio-button a {
   color: #fff;
   text-decoration: none;
-  transition: 0.3s;
+  transition: 0.8s;
   background-color: #000;
-  padding: 0.6rem;
-  border-radius: 10px;
+  padding: 0.8rem;
+  outline: 3px solid currentColor;
+  outline-offset: -5px;
 }
 
-.portfolio-button a:hover {
-  color: var(--primary);
+.portfolio-button a:hover,
+.portfolio-button:focus {
+  background-color: #fff;
+  color: #000;
 }
 
+/* För mobil anpassning */
 @media (max-width: 760px) {
-    .portfolio-img {
-      width: 80vw;
-    }
+  .portfolio-img {
+    width: 80vw;
   }
+}
 
-/* Socials i footern */
+/* Individuella kursers sida */
+.course-page {
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  width: 80vw;
+  margin: auto;
+  padding: 1rem;
+}
+
+.course-date {
+  border-bottom: 2px solid #000;
+}
+
+.course-desc {
+    margin-top: 3rem;
+}
+
+
+/* Länkar i footern */
 .socials {
   margin-top: 8rem;
   margin-bottom: 0;
@@ -164,6 +184,7 @@ html body div#___gatsby div#gatsby-focus-wrapper main {
   justify-content: space-evenly;
 }
 
+/* Individuella länkar */
 .socials-item {
   text-decoration: none;
   color: #fff;
@@ -177,8 +198,19 @@ html body div#___gatsby div#gatsby-focus-wrapper main {
   border-radius: 20px;
 }
 
+/* För mobil anpassning */
 @media (max-width: 760px) {
   .socials-item {
     padding: 0.2rem;
+  }
+
+  .socials-item {
+    border: none;
+  }
+
+  .socials-item:hover {
+    border-radius: 0;
+    background-color: transparent;
+    border-bottom: 2px solid var(--accent);
   }
 }

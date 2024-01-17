@@ -2,7 +2,8 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 const useNavigation = () => {
-  const {allContentfulPage} = useStaticQuery(graphql`
+  /* Hämtar menyn, som sedan skickas till layout  */
+  const { allContentfulPage } = useStaticQuery(graphql`
     query {
       allContentfulPage(sort: { url: ASC }) {
         edges {
@@ -17,4 +18,4 @@ const useNavigation = () => {
   return allContentfulPage.edges
 }
 
-export default useNavigation;
+export default useNavigation

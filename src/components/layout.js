@@ -6,6 +6,7 @@ import "../css/style.css"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import Footer from "./footer"
 
+/* Hämta data för navigations menyn */
 const Layout = ({ children }) => {
   const data = useStaticQuery(
     graphql`
@@ -23,6 +24,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      {/* Hjälper med SEO */}
       <Helmet>
         <meta name="description" content={data.site.siteMetadata.title} />
         <meta name="author" content={data.site.siteMetadata.author} />
@@ -33,12 +35,14 @@ const Layout = ({ children }) => {
           <ul>
             {navigation.map(({ node }) => (
               <li key={node.url}>
-                <Link to={node.url}>{node.title}</Link>
+                {/* Skriv ut titel och länk för de olika sidorna, samt ta bort 404 sidan från själva menyn */}
+                {node.url != "/404/" && <Link to={node.url}>{node.title}</Link>}
               </li>
             ))}
           </ul>
         </nav>
       </header>
+      {/* props */}
       <main>{children}</main>
       <Footer />
     </>

@@ -1,8 +1,8 @@
 import React from "react"
-import Layout from "../components/layout"
 import { graphql, useStaticQuery, Link } from "gatsby"
 
 const NotFoundPage = () => {
+  /* Hämta datan */
   const data = useStaticQuery(graphql`
     query {
       allContentfulError {
@@ -17,7 +17,8 @@ const NotFoundPage = () => {
   `)
 
   return (
-    <Layout>
+    <>
+    {/* Skriv ut datan för 404 not found och visa en länk tillbaks till startsidan */}
       {data.allContentfulError.edges.map(edge => {
         return (
           <>
@@ -27,7 +28,7 @@ const NotFoundPage = () => {
           </>
         )
       })}
-    </Layout>
+    </>
   )
 }
 
