@@ -5,7 +5,6 @@ import AboutTemplate from "../templates/about-template"
 import HomeTemplate from "../templates/home-template"
 import PortfolioTemplate from "../templates/portfolio-template"
 import ContactTemplate from "../templates/contact-template"
-import ErrorTemplate from "../templates/404-template"
 
 const Page = props => {
   /* Här skapar vi en sida beroende på vilken länk som användaren valt */
@@ -20,8 +19,6 @@ const Page = props => {
         return <PortfolioTemplate {...contentfulPage} />
       case "contact":
         return <ContactTemplate {...contentfulPage} />
-      case "404":
-        return <ErrorTemplate {...contentfulPage} />
       default:
         return <HomeTemplate {...contentfulPage} />
     }
